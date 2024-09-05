@@ -241,7 +241,7 @@ class ElizaBot:
                         if days > 4:
                             return "Please consider talking to a doctor or professional if it keeps bothering you."
                         else:
-                            return random.choice(responses).format(*[self.reflect(g) for g in match.groups()])
+                             return "Make sure to rest and take care of yourself, and if it persists, don't hesitate to seek professional advice."
                     else:
                         # Normal response if no digit is found
                         return random.choice(responses).format(*[self.reflect(g) for g in match.groups()])
