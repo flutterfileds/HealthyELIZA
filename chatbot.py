@@ -146,13 +146,18 @@ class ElizaBot:
             "If you're feeling burned out, try setting boundaries and taking time off to recover.",
             "Burnout can be serious. You can take breaks or consider talking to professional."
         ]
-        
+
         self.responses_set_25 = [
+            "Feeling tired can be draining. Please get enough rest.",
+            "Fatigue can be tough to deal with. Have you considered talking to a doctor if this persists?"
+        ]
+        
+        self.responses_set_26 = [
             "Why are you feeling {0}",
             "Can you share more about what's making you feel {0}?"
         ]
 
-        self.responses_set_26 = [
+        self.responses_set_27 = [
             "Can you tell me more about that?", 
             "I’m not sure I understand you fully. Could you elaborate more?",
             "Let's explore that further."
@@ -208,7 +213,7 @@ class ElizaBot:
             ([re.compile(r'(ok|okay*|oke*)', re.IGNORECASE),
               re.compile(r'.*\s*will do.*')], self.responses_set_18),
 
-            ([re.compile(r'no (i haven(?:\'|)t (.*))', re.IGNORECASE)], self.responses_set_19),
+            ([re.compile(r'no (i haven(?:\'|)t)', re.IGNORECASE)], self.responses_set_19),
 
             #common reason not going to doctor/not sleeping or eating well
             ([re.compile(r'(?:i\'?m|i am) (?:busy|occupied|swamped)', re.IGNORECASE)], self.responses_set_20),
@@ -216,10 +221,11 @@ class ElizaBot:
             ([re.compile(r'.*\s*overwhelm.*', re.IGNORECASE)], self.responses_set_22),
             ([re.compile(r'.*\s*nervous.*', re.IGNORECASE)], self.responses_set_23),
             ([re.compile(r'.*\s*burned out.*', re.IGNORECASE)], self.responses_set_24),
+            ([re.compile(r'.*\s*tired.*', re.IGNORECASE)], self.responses_set_25),
 
-            ([re.compile(r'.*\s*(not good|bad|awful|terrible).*', re.IGNORECASE)], self.responses_set_25),
+            ([re.compile(r'.*\s*(not good|bad|awful|terrible).*', re.IGNORECASE)], self.responses_set_26),
             
-            ([re.compile(r'(.*)', re.IGNORECASE)], self.responses_set_26),
+            ([re.compile(r'(.*)', re.IGNORECASE)], self.responses_set_27),
         ]
 
     def reflect(self, phrase):
